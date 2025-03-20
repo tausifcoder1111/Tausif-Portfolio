@@ -6,5 +6,12 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineConfig({
   plugins: [react(), tailwindcss()],
   root: '.',
-  base :"/Tausif-Portfolio"
+  base :"/Tausif-Portfolio",
+  build: {
+    outDir: "dist", // Ensure Vite outputs the build files to 'dist'
+    rollupOptions: {
+      input: "index.html", // Explicitly set the entry point
+    },
+  },
+
 })
